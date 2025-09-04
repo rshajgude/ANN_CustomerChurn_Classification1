@@ -1,6 +1,6 @@
 import  streamlit as st
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 from sklearn.preprocessing import StandardScaler , LabelEncoder, OneHotEncoder
 import pandas as pd
 import pickle
@@ -10,7 +10,7 @@ import pickle
 
 
 
-model=tf.keras.models.load_model('model.h5')
+model=tensorflow.keras.models.load_model('model.h5')
 
 # Load encoder and scaler
 with open('onehot_encode_geo.pkl', 'rb') as file:
@@ -72,4 +72,5 @@ prediction_prob=prediction[0][0]
 if prediction_prob> 0.5:
     st.write('The customer is likely to churn')
 else:
+
     st.write('The customer is not likely to churn')
